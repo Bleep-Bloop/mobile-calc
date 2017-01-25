@@ -1,0 +1,22 @@
+{
+  "name": "comp3025-assingment1",
+  "description": "Calculator jQuery Moble App",
+  "main": "index.js",
+  "authors": [
+    "Taisen Colcher"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "Scripts/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2.1.4",
+    "jquery-mobile-bower": "^1.4.5"
+  }
+}
