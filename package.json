@@ -1,0 +1,11 @@
+{
+  "name": "comp3025-assingment1",
+  "version": "1.0.0",
+  "description": "Calculator jQuery Moble App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Taisen Colcher",
+  "license": "ISC"
+}
