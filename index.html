@@ -15,31 +15,84 @@
 <link rel="stylesheet" href="\Scripts\lib\jquery-mobile-bower\css\jquery.mobile-1.4.5.min.css">
 
 <!--TESTING THIS-->
+
+
+
 <script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
+
+//GLOBAL
+var operator;
+var firstNumber;
+var secondNumber;
+var product;
 
 function clearCalcScreen() {
 
     document.getElementById("calcScreen").value = "";
 }
 
+
+
+
 //Adds/appends number to screen
 function setNumberOne(number) {
  
-number = 1;
+
 
 var calcScreen = document.getElementById("calcScreen");
 calcScreen.value = calcScreen.value + number;
 
 }
 
-//Adds/appends number to screen
-function setNumberOne(number) {
- 
+
+function addButton() {
+
+    console.log("add button running");
+
+    var calcScreen = document.getElementById("calcScreen");
+    firstNumber = calcScreen.value;
+    
+    
+    operator = '+'
+    
+    calcScreen.value = '';
+
+
+}
+
+
+
+
+function equals() {
+
+    console.log("we are going to " + operator);
+
 var calcScreen = document.getElementById("calcScreen");
-calcScreen.value = calcScreen.value + number;
+
+    secondNumber = calcScreen.value;
+
+if(operator == '+')
+{
+
+    console.log("The first number is " + firstNumber);
+    console.log("The second Number is " + secondNumber);
+
+    console.log("This makes");
+
+    product = parseInt(firstNumber) + parseInt(secondNumber);
+    
+
+    console.log(product);
+
+}
+
+if(operator == '-')
+{
+
+    console.log("subtracting");
+}
+
+
 
 }
 
@@ -49,11 +102,6 @@ calcScreen.value = calcScreen.value + number;
 
 </head>
 <body>
-
-
-<h1>A Web Page</h1>
-<p id="demo">A Paragraph</p>
-<button type="button" onclick="myFunction()">Try it</button>
 
 
 
@@ -108,14 +156,14 @@ calcScreen.value = calcScreen.value + number;
            <div class="ui-block-a" style="padding:5px;"> <button onclick="setNumberOne(1)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">1</button> </div>
            <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(2)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">2</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button onclick="setNumberOne(3)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">3</button> </div>
-           <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+</button> </div>
+           <div class="ui-block-d" style="padding:5px;"> <button onclick="addButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+</button> </div>
            </div>
          
            <div class="ui-grid-c">
            <div class="ui-block-a" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">.</button> </div>
            <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(0)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">0</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+/-</button> </div>
-           <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">=</button> </div>
+           <div class="ui-block-d" style="padding:5px;"> <button onclick="equals()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">=</button> </div>
            </div>
          
          
