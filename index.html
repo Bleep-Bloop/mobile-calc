@@ -6,15 +6,57 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"> <!-- user-scalable=no means no pinch and zoom -->
 
-    <meta name="viewport" content="width-device-width, initial-scale=1, user-scalable=no"> <!-- user-scalable=no means no pinch and zoom -->
-
     <title>Mobile Calculator</title>
 
+
+
 <!--CSS Section -->
+
 <link rel="stylesheet" href="\Scripts\lib\jquery-mobile-bower\css\jquery.mobile-1.4.5.min.css">
+
+<!--TESTING THIS-->
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+}
+
+function clearCalcScreen() {
+
+    document.getElementById("calcScreen").value = "";
+}
+
+//Adds/appends number to screen
+function setNumberOne(number) {
+ 
+number = 1;
+
+var calcScreen = document.getElementById("calcScreen");
+calcScreen.value = calcScreen.value + number;
+
+}
+
+//Adds/appends number to screen
+function setNumberOne(number) {
+ 
+var calcScreen = document.getElementById("calcScreen");
+calcScreen.value = calcScreen.value + number;
+
+}
+
+
+
+</script>
 
 </head>
 <body>
+
+
+<h1>A Web Page</h1>
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+
+
+
     <div data-role="page" id="home" ">
         
         <div data-role="header">
@@ -25,45 +67,53 @@
         
         <!-- Main Content -->
 
-        <div data-role="main" class="ui-content"" >
-            
-          
-        
+       <div data-role="main" class="ui-content"" > 
+
+
+
+
+
+
+
            
-           
-           <input style="background-color:#81A594; height:75px;"> </input>
+           <!-- type number for number only -->
+           <input id="calcScreen" type="number" name=""calcScreen" style="background-color:#81A594; text-align: right; height:75px; "> </input>
            
            <div class="ui-grid-c"> 
-           <div class="ui-block-a" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">Clear</button> </div>
+           <div class="ui-block-a" style="padding:5px;"> <button  onclick="clearCalcScreen()" id="clear" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive" ">Clear</button> </div>
+
+
+
+           
            <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">()</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">%</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">/</button> </div>
            </div>
            
            <div class="ui-grid-c">
-           <div class="ui-block-a" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">7</button> </div>
-           <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">8</button> </div>
-           <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">9</button> </div>
+           <div class="ui-block-a" style="padding:5px;"> <button onclick="setNumberOne(7)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">7</button> </div>
+           <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(8)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">8</button> </div>
+           <div class="ui-block-c" style="padding:5px;"> <button onclick="setNumberOne(9)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">9</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">*</button> </div>
            </div>
          
            <div class="ui-grid-c">
-           <div class="ui-block-a" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">4</button> </div>
-           <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">5</button> </div>
-           <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">6</button> </div>
+           <div class="ui-block-a" style="padding:5px;"> <button onclick="setNumberOne(4)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">4</button> </div>
+           <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(5)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">5</button> </div>
+           <div class="ui-block-c" style="padding:5px;"> <button onclick="setNumberOne(6)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">6</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">-</button> </div>
            </div>
            
            <div class="ui-grid-c">
-           <div class="ui-block-a" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">1</button> </div>
-           <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">2</button> </div>
-           <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">3</button> </div>
+           <div class="ui-block-a" style="padding:5px;"> <button onclick="setNumberOne(1)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">1</button> </div>
+           <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(2)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">2</button> </div>
+           <div class="ui-block-c" style="padding:5px;"> <button onclick="setNumberOne(3)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">3</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+</button> </div>
            </div>
          
            <div class="ui-grid-c">
            <div class="ui-block-a" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">.</button> </div>
-           <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">0</button> </div>
+           <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(0)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">0</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+/-</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">=</button> </div>
            </div>
