@@ -60,16 +60,34 @@ function addButton() {
 
 }
 
+function subtractButton() {
+
+    console.log("subtract button running");
+
+    var calcScreen = document.getElementById("calcScreen");
+    firstNumber = calcScreen.value;
+    
+    
+    operator = '-'
+    
+    calcScreen.value = '';
+
+
+}
+
+
 
 
 
 function equals() {
 
-    console.log("we are going to " + operator);
-
-var calcScreen = document.getElementById("calcScreen");
+    var calcScreen = document.getElementById("calcScreen");
 
     secondNumber = calcScreen.value;
+
+
+        console.log("we are going to " + operator);
+
 
 if(operator == '+')
 {
@@ -79,22 +97,34 @@ if(operator == '+')
 
     console.log("This makes");
 
-    product = parseInt(firstNumber) + parseInt(secondNumber);
+    product = parseFloat(firstNumber) + parseFloat(secondNumber); //REMEMBER TO TRIM DECIMALS OF FLOATS! .00
     
-
     console.log(product);
+ 
+    calcScreen.value = product; //Might add this outside of if statements
 
 }
 
 if(operator == '-')
 {
+    
+    console.log("The first number is " + firstNumber);
+    console.log("The second Number is " + secondNumber);
 
-    console.log("subtracting");
+    console.log("This makes");
+
+    product = parseFloat(firstNumber) - parseFloat(secondNumber);
+    
+    console.log(product);
+ 
+    calcScreen.value = product; //Might add this outside of if statements
+
 }
 
 
 
-}
+
+}//End equals()
 
 
 
@@ -149,7 +179,7 @@ if(operator == '-')
            <div class="ui-block-a" style="padding:5px;"> <button onclick="setNumberOne(4)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">4</button> </div>
            <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(5)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">5</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button onclick="setNumberOne(6)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">6</button> </div>
-           <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">-</button> </div>
+           <div class="ui-block-d" style="padding:5px;"> <button onclick="subtractButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">-</button> </div>
            </div>
            
            <div class="ui-grid-c">
