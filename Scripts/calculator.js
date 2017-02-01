@@ -1,4 +1,9 @@
-
+/* Taisen Colcher 200258025
+    JQuery Mobile Calculator 
+    Jan 31/ 2017
+    
+    This is a calculator made for mobile devices with JQuery Mobile  */
+    
 
 //GLOBAL
 var operator;
