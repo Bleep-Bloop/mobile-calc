@@ -75,6 +75,37 @@ function subtractButton() {
 
 }
 
+function divideButton() {
+
+    console.log("divide button running");
+
+    var calcScreen = document.getElementById("calcScreen");
+    firstNumber = calcScreen.value;
+    
+    
+    operator = '/'
+    
+    calcScreen.value = '';
+
+
+}
+
+function multiplyButton() {
+
+    console.log("multiply button running");
+
+    var calcScreen = document.getElementById("calcScreen");
+    firstNumber = calcScreen.value;
+    
+    
+    operator = '*'
+    
+    calcScreen.value = '';
+    
+}
+
+
+
 
 
 
@@ -121,6 +152,37 @@ if(operator == '-')
 
 }
 
+if(operator == '/')
+{
+    
+    console.log("The first number is " + firstNumber);
+    console.log("The second Number is " + secondNumber);
+
+    console.log("This makes");
+
+    product = parseFloat(firstNumber) / parseFloat(secondNumber);
+    
+    console.log(product);
+ 
+    calcScreen.value = product; //Might add this outside of if statements
+
+}
+
+if(operator == '*')
+{
+    
+    console.log("The first number is " + firstNumber);
+    console.log("The second Number is " + secondNumber);
+
+    console.log("This makes");
+
+    product = parseFloat(firstNumber) * parseFloat(secondNumber);
+    
+    console.log(product);
+ 
+    calcScreen.value = product; //Might add this outside of if statements
+
+}
 
 
 
@@ -165,14 +227,14 @@ if(operator == '-')
            
            <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">()</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">%</button> </div>
-           <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">/</button> </div>
+           <div class="ui-block-d" style="padding:5px;"> <button onclick="divideButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">/</button> </div>
            </div>
            
            <div class="ui-grid-c">
            <div class="ui-block-a" style="padding:5px;"> <button onclick="setNumberOne(7)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">7</button> </div>
            <div class="ui-block-b" style="padding:5px;"> <button onclick="setNumberOne(8)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">8</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button onclick="setNumberOne(9)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">9</button> </div>
-           <div class="ui-block-d" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">*</button> </div>
+           <div class="ui-block-d" style="padding:5px;"> <button onclick="multiplyButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">*</button> </div>
            </div>
          
            <div class="ui-grid-c">
