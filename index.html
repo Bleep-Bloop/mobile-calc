@@ -14,10 +14,10 @@
 
 <link rel="stylesheet" href="\Scripts\lib\jquery-mobile-bower\css\jquery.mobile-1.4.5.min.css">
 
-<!--TESTING THIS-->
 
 
 
+<!-- move this to a seperate file -->
 <script>
 
 //GLOBAL
@@ -26,11 +26,24 @@ var firstNumber;
 var secondNumber;
 var product;
 
-function clearCalcScreen() {
+//Clears the calculator screen (does not clear var (firstNumber/secondNumebr))
+function clearButton() {
 
     document.getElementById("calcScreen").value = "";
 }
 
+//clears the calculator sc
+function allClearButton() {
+
+    document.getElementById("calcScreen").value = "";
+
+    firstNumber = '';
+    //secondNumber = '';
+
+    //Come back here
+    console.log(firstNumber);
+    console.log(secondNumber);
+}
 
 
 
@@ -105,7 +118,20 @@ function multiplyButton() {
 }
 
 
+function modulousButton() {
 
+    console.log("% button running");
+
+    var calcScreen = document.getElementById("calcScreen");
+    firstNumber = calcScreen.value;
+    
+    
+    operator = '%'
+    
+    calcScreen.value = '';
+
+
+}
 
 
 
@@ -220,13 +246,13 @@ if(operator == '*')
            <input id="calcScreen"  step="0.01" name="calcScreen" style="background-color:#81A594; text-align: right; height:75px; font-size: 40px; color: black; " readonly="true"> </input>
            
            <div class="ui-grid-c"> 
-           <div class="ui-block-a" style="padding:5px;"> <button  onclick="clearCalcScreen()" id="clear" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive" ">Clear</button> </div>
+           <div class="ui-block-a" style="padding:5px;"> <button  onclick="clearButton()" id="clear" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive" ">C</button> </div>
 
 
 
            
            <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">()</button> </div>
-           <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">%</button> </div>
+           <div class="ui-block-c" style="padding:5px;"> <button onclick="allClearButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">A/C</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button onclick="divideButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">/</button> </div>
            </div>
            
