@@ -17,191 +17,8 @@
 
 
 
-<!-- move this to a seperate file -->
-<script>
 
-//GLOBAL
-var operator;
-var firstNumber;
-var secondNumber;
-var product;
-
-//Clears the calculator screen (does not clear var (firstNumber/secondNumebr))
-function clearButton() {
-
-    document.getElementById("calcScreen").value = "";
-}
-
-
-//Clears the calculator sceen and clears var firstNumber & var secondNumber
-function allClearButton() {
-
-    document.getElementById("calcScreen").value = "";
-
-    firstNumber = '';
-    //secondNumber = '';
-
-    //Come back here
-    console.log(firstNumber);
-    console.log(secondNumber);
-}
-
-
-//Adds/appends number/decimal to calculator screen
-function appendNumber(number) {
- 
-var calcScreen = document.getElementById("calcScreen");
-calcScreen.value = calcScreen.value + number;
-
-}
-
-//Preps number to be added
-function addButton() {
-
-    console.log("add button running");
-
-    var calcScreen = document.getElementById("calcScreen");
-    firstNumber = calcScreen.value;
-    
-    
-    operator = '+'
-    
-    calcScreen.value = '';
-
-
-}
-
-//Preps number to be subtracted
-function subtractButton() {
-
-    console.log("subtract button running");
-
-    var calcScreen = document.getElementById("calcScreen");
-    firstNumber = calcScreen.value;
-    
-    
-    operator = '-'
-    
-    calcScreen.value = '';
-
-
-}
-
-//Preps number to be divided
-function divideButton() {
-
-    console.log("divide button running");
-
-    var calcScreen = document.getElementById("calcScreen");
-    firstNumber = calcScreen.value;
-    
-    
-    operator = '/'
-    
-    calcScreen.value = '';
-
-
-}
-
-//preps number to be multiplied
-function multiplyButton() {
-
-    console.log("multiply button running");
-
-    var calcScreen = document.getElementById("calcScreen");
-    firstNumber = calcScreen.value;
-    
-    
-    operator = '*'
-    
-    calcScreen.value = '';
-    
-}
-
-
-
-
-//change to return later
-//does the math and displays result on calculator screen
-function equals() {
-
-    var calcScreen = document.getElementById("calcScreen");
-
-    secondNumber = calcScreen.value;
-
-
-        console.log("we are going to " + operator);
-
-
-if(operator == '+')
-{
-
-    console.log("The first number is " + firstNumber);
-    console.log("The second Number is " + secondNumber);
-
-    console.log("This makes");
-
-    product = parseFloat(firstNumber) + parseFloat(secondNumber); //REMEMBER TO TRIM DECIMALS OF FLOATS! .00
-    
-    console.log(product);
- 
-    calcScreen.value = product; //Might add this outside of if statements
-
-}
-
-if(operator == '-')
-{
-    
-    console.log("The first number is " + firstNumber);
-    console.log("The second Number is " + secondNumber);
-
-    console.log("This makes");
-
-    product = parseFloat(firstNumber) - parseFloat(secondNumber);
-    
-    console.log(product);
- 
-    calcScreen.value = product; //Might add this outside of if statements
-
-}
-
-if(operator == '/')
-{
-    
-    console.log("The first number is " + firstNumber);
-    console.log("The second Number is " + secondNumber);
-
-    console.log("This makes");
-
-    product = parseFloat(firstNumber) / parseFloat(secondNumber);
-    
-    console.log(product);
- 
-    calcScreen.value = product; //Might add this outside of if statements
-
-}
-
-if(operator == '*')
-{
-    
-    console.log("The first number is " + firstNumber);
-    console.log("The second Number is " + secondNumber);
-
-    console.log("This makes");
-
-    product = parseFloat(firstNumber) * parseFloat(secondNumber);
-    
-    console.log(product);
- 
-    calcScreen.value = product; //Might add this outside of if statements
-
-}
-
-
-
-}//End equals()
-
-
+<script src="Scripts/calculator.js">
 
 </script>
 
@@ -223,23 +40,14 @@ if(operator == '*')
        <div data-role="main" class="ui-content"" > 
 
 
-
-
-
-
-
            
-           <!-- type number for number only -->
-           <input id="calcScreen"  step="0.01" name="calcScreen" style="background-color:#81A594; text-align: right; height:75px; font-size: 40px; color: black; " readonly="true"> </input>
+           
+           <input id="calcScreen"  step="0.01" name="calcScreen" style="background-color:#81A594; text-align: right; height:75px; font-size: 40px; color: black; " readonly="true" >  </input>
            
            <div class="ui-grid-c"> 
            <div class="ui-block-a" style="padding:5px;"> <button  onclick="clearButton()" id="clear" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive" ">C</button> </div>
-
-
-
-           
-           <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">()</button> </div>
            <div class="ui-block-c" style="padding:5px;"> <button onclick="allClearButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">A/C</button> </div>
+           <div class="ui-block-b" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">()</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button onclick="divideButton()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">/</button> </div>
            </div>
            
@@ -267,7 +75,7 @@ if(operator == '*')
            <div class="ui-grid-c">
            <div class="ui-block-a" style="padding:5px;"> <button onclick="appendNumber('.')" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">.</button> </div>
            <div class="ui-block-b" style="padding:5px;"> <button onclick="appendNumber(0)" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">0</button> </div>
-           <div class="ui-block-c" style="padding:5px;"> <button class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+/-</button> </div>
+           <div class="ui-block-c" style="padding:5px;"> <button onclick="negative()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">+/-</button> </div>
            <div class="ui-block-d" style="padding:5px;"> <button onclick="equals()" class="ui-btn ui-corner-all ui-overlay-shadow ui-responsive">=</button> </div>
            </div>
          
